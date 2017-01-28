@@ -1,0 +1,17 @@
+package by.tr.xmlAnalized;
+
+
+import by.tr.xmlAnalized.service.AnalizedService;
+import by.tr.xmlAnalized.service.impl.AnalizedServiceImpl;
+
+public class xmlAnalized {
+
+	public static void main(String[] args) {
+		AnalizedService analizedService = new AnalizedServiceImpl();
+		String a1="/";
+		String a2="/";
+		System.out.println((a2==a1));
+		//analizedService.getNode(".//resource//notes.xml");
+	}		
+}
+

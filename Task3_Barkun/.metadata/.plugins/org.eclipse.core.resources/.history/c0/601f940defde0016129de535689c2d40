@@ -1,0 +1,20 @@
+package by.tr.xmlAnalized.service.impl;
+
+import by.tr.xmlAnalized.dao.AnalizedDAO;
+import by.tr.xmlAnalized.dao.exception.DAOException;
+import by.tr.xmlAnalized.dao.factory.DAOFactory;
+import by.tr.xmlAnalized.service.AnalizedService;
+
+public class AnalizedServiceImpl implements AnalizedService {
+	
+	@Override
+	public void getNode(String fileName) {
+		try{
+			DAOFactory daoObjectFactory = DAOFactory.getInstance();
+			AnalizedDAO analizedDAO = daoObjectFactory.getAnalizedDAO();
+			analizedDAO.getNode(fileName);
+		}catch(DAOException e){
+			
+		}
+	}
+}

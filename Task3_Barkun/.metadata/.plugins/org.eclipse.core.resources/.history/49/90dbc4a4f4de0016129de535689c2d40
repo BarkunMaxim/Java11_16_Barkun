@@ -1,0 +1,40 @@
+package by.tr.xmlAnalized.service.impl;
+
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.ArrayList;
+
+import by.tr.xmlAnalized.dao.AnalizedDAO;
+import by.tr.xmlAnalized.dao.exception.DAOException;
+import by.tr.xmlAnalized.dao.factory.DAOFactory;
+import by.tr.xmlAnalized.service.AnalizedService;
+
+public class AnalizedServiceImpl implements AnalizedService {
+	
+	@Override
+	public String getNode(String fileName) {
+		if(fileName == null || fileName.isEmpty()){
+			System.out.println("Неверное имя файла");
+		}
+		
+		String tag = null;
+		try{
+			List<String> list = new ArrayList<String>();
+			DAOFactory daoObjectFactory = DAOFactory.getInstance();
+			AnalizedDAO analizedDAO = daoObjectFactory.getAnalizedDAO();
+			tag = analizedDAO.getNode(fileName);
+			Pattern p = Pattern.compile("<[^>]+>");
+		    Matcher m = p.matcher(tag);
+		    while(m.find()){
+		    	list.add(tag.substring(m.start(),m.end()));
+		    }
+		    for(int i=0; i<list.size();i++){
+	             System.out.println(list.get(i));
+	        }
+		}catch(DAOException e){
+			
+		}
+		return tag;
+	}
+}

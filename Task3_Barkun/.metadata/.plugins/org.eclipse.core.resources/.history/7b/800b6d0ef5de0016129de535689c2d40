@@ -1,0 +1,29 @@
+package by.tr.xmlAnalized.dao.impl;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+import by.tr.xmlAnalized.dao.AnalizedDAO;
+import by.tr.xmlAnalized.dao.exception.DAOException;
+
+public class XmlAnalizedDAO implements AnalizedDAO {
+	
+	public String getNode(String fileName) throws DAOException{
+		String tag = "";
+		try{
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+			int symbol = bufferedReader.read();
+			while((symbol = bufferedReader.read()) != -1){
+				tag+=(char)bufferedReader.read();
+				
+			}
+			bufferedReader.close();
+		}catch(IOException e){
+			throw new DAOException();
+		}
+
+		return tag;
+	}
+
+}
