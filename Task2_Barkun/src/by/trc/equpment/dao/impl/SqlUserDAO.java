@@ -17,18 +17,19 @@ public class SqlUserDAO implements UserDAO{
 		Statement st = null;
 		ResultSet rs = null;
 		try{
-			Class.forName("org.git.mm.mysql.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/maxim","root","Vfrcbv11");
+			Class.forName("org.git.mm.mysql.Driver");// зачем драйвер грузить каждый раз при вызове метода
+			// ты когда документ печатаешь, тоже перед каждой новой страницей драйвер переустанавливаешь?
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/maxim","root","Vfrcbv11");// что мы делаем с константными строками в коде?
 			st = con.createStatement();
-		    rs = st.executeQuery("Select login, password from user where login="+login+","+"password="+password);
-		    rs.next();
-			System.out.println(rs.getString(1));
-		}catch(ClassNotFoundException e){
+		    rs = st.executeQuery("Select login, password from user where login="+login+","+"password="+password);// про PreperadStatement и случаи его применения я кому рассказывала?
+		    rs.next();// а если next сражу false вернет - что твой код делать будет
+			System.out.println(rs.getString(1));//??????
+		}catch(ClassNotFoundException e){// почему catch-и пустые?
 		}catch(SQLException e){
 		}finally{
 			try{
 				if(con != null){con.close();}
-			}catch(SQLException e){}
+			}catch(SQLException e){}// опять пустой
 		}
 	}
 	
