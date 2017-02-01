@@ -13,7 +13,8 @@ public class ClientServiceImpl implements ClientService {
 	public void singIn(String login, String password) throws ServiceException{
 		if(login == null || login.isEmpty()){
 			throw new ServiceException("Incorrect login");
-		}
+		}// это и есть вся проверка логина
+		// а пароль на валидность и проверять не надо?
 		try{
 			DAOFactory daoObjectFactory = DAOFactory.getInstance();
 			UserDAO userDAO = daoObjectFactory.getUserDAO();
@@ -32,7 +33,7 @@ public class ClientServiceImpl implements ClientService {
 	public void registration(User user) throws ServiceException{
 		if(user.getLogin() == null || user.getLogin().isEmpty()){
 			throw new ServiceException("Incorrect login");
-		}
+		}// то же, что и в первом методе
 		try{
 			DAOFactory daoObjectFactory = DAOFactory.getInstance();
 			UserDAO userDAO = daoObjectFactory.getUserDAO();
