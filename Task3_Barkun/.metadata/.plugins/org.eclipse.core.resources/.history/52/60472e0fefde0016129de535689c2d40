@@ -1,7 +1,0 @@
-package by.tr.xmlAnalized.service;
-
-public interface AnalizedService {
-	
-	void getNode(String fileName);
-
-}
