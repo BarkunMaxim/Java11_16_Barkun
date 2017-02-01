@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
 
-import by.tr.xmlAnalized.dao.AnalizedDAO;
+import by.tr.xmlAnalized.dao.AnalizerDAO;
 import by.tr.xmlAnalized.dao.exception.DAOException;
 import by.tr.xmlAnalized.dao.factory.DAOFactory;
 import by.tr.xmlAnalized.service.AnalizerService;
@@ -25,7 +25,7 @@ public class AnalizerServiceImpl implements AnalizerService {
 		try{
 			List<String> list = new ArrayList<String>();
 			DAOFactory daoObjectFactory = DAOFactory.getInstance();
-			AnalizedDAO analizedDAO = daoObjectFactory.getAnalizedDAO();
+			AnalizerDAO analizedDAO = daoObjectFactory.getAnalizedDAO();
 			tag = analizedDAO.readFile(fileName);
 			m = p.matcher(tag);
 		    System.out.println(tag);

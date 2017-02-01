@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import by.tr.xmlAnalized.dao.AnalizedDAO;
+import by.tr.xmlAnalized.dao.AnalizerDAO;
 import by.tr.xmlAnalized.dao.exception.DAOException;
 
-public class XmlAnalizerDAO implements AnalizedDAO {
+public class XmlAnalizerDAO implements AnalizerDAO {
 	
 	public String readFile(String fileName) throws DAOException{
 		String tag = "";
