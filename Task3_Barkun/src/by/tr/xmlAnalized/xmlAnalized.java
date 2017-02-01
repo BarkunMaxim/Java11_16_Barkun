@@ -10,7 +10,7 @@ public class xmlAnalized {
 
 	public static void main(String[] args) {
 		AnalizedService analizedService = new AnalizedServiceImpl();
-		analizedService.analizedXml(".//resource//note.xml");
+		analizedService.analizedXml(".//resource//notes.xml");
 		
 	}		
 }
