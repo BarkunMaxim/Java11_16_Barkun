@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+	<family xmlns="http://www.example.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org FamileShema.xsd">
+		<morther>
+			<full-Info>
+				<name>Sveta</name>
+				<surname>Barkun</surname>
+				<birthday>2013-11-02</birthday>
+				<passpord>MC323646784</passpord>
+			</full-Info>
+			<short-Info>
+				<name>Yura</name>
+				<birthday>2015-11-25</birthday>
+			</short-Info>
+			<short-Info>
+				<name>Yura</name>
+				<birthday>2015-11-25</birthday>
+			</short-Info>
+		</morther>	
+		<farther>
+			<short-Info>
+				<name>Yura</name>
+				<birthday>2015-11-25</birthday>
+			</short-Info>
+		</farther>
+		<children count='1'></children>
+	</family>

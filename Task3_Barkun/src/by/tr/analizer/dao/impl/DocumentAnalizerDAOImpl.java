@@ -54,7 +54,7 @@ public class DocumentAnalizerDAOImpl implements DocumentAnalizerDAO {
 				} else {
 					StringBuilder str = new StringBuilder().append(array);
 					createElement(str, list);
-					array = new char[500];
+					array = new char[SIZE];
 				}
 			}
 

@@ -9,7 +9,7 @@ import by.tr.analizer.service.impl.DocumentAnalizerServiceImpl;
 
 public class Main {
 
-	private static final String FILE_PATH = "resorces/notes.xml";
+	private static final String FILE_PATH = "resorces/data.xml";
 
 	public static void main(String[] args) {
 

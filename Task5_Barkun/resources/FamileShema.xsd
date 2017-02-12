@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:br="http://www.example.org" targetNamespace="http://www.example.org"  elementFormDefault="qualified">
+	<xs:element name="family" type="br:FamilyType"/>
+
+	<xs:complexType name="FamilyType">
+			<xs:sequence>
+				<xs:element name="morther" type="br:parentsType"/>
+				<xs:element name="farther" type="br:parentsType"/>
+				<xs:element name="children" >
+					<xs:complexType>
+						<xs:attribute name="count" type="xs:int"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	<xs:complexType name="parentsType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="full-Info" type="br:fullInfoType" minOccurs="0"/>
+			<xs:element name="short-Info" type="br:shortInfoType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="fullInfoType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="surname" type="xs:string"/>
+			<xs:element name="birthday" type="xs:date"/>
+			<xs:element name="passpord" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="shortInfoType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="birthday" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
